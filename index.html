@@ -1,1 +1,81 @@
-<img style="width:100%;" src="back.jfif">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>动态显示时间</title>
+
+        <style type="text/css">
+            #times{
+                width: 400px;
+                height: 160px;
+				font-family: verdana;
+				font-weight: bold;
+                font-size: 35px;
+                text-align: center;
+                line-height: 50px;
+                //border: 3px solid gray;  /*如果不加实线无法显示边框*/
+            }
+        </style>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+			function getQueryVariable(variable)
+			{
+				   var query = window.location.search.substring(1);
+				   var vars = query.split("&");
+				   for (var i=0;i<vars.length;i++) {
+						   var pair = vars[i].split("=");
+						   if(pair[0] == variable){return pair[1];}
+				   }
+				   return(false);
+			}
+			Date.prototype.format = function(fmt) { 
+				 var o = { 
+					"M+" : this.getMonth()+1,                 //月份 
+					"d+" : this.getDate(),                    //日 
+					"h+" : this.getHours(),                   //小时 
+					"m+" : this.getMinutes(),                 //分 
+					"s+" : this.getSeconds(),                 //秒 
+					"q+" : Math.floor((this.getMonth()+3)/3), //季度 
+					"S"  : this.getMilliseconds()             //毫秒 
+				}; 
+				if(/(y+)/.test(fmt)) {
+						fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+				}
+				 for(var k in o) {
+					if(new RegExp("("+ k +")").test(fmt)){
+						 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+					 }
+				 }
+				return fmt; 
+			}       
+            //得到时间并写入div
+            function getDate(){
+                //获取当前时间
+                var date = new Date().format("MM-dd hh:mm:ss");
+                //格式化为本地时间格式
+                var date1 = date.toLocaleString();
+                //获取div
+                var div1 = document.getElementById("times");
+                //将时间写入div
+                div1.innerHTML = date;
+				
+				var div2 = document.getElementById("xname");
+				div2.innerHTML = 'id='+getQueryVariable("id");
+            }
+            //使用定时器每秒向div写入当前时间
+            setInterval("getDate()",1000);
+        </script>
+		<div style="position: relative; width: 100%; height: auto;">
+
+			<img src="bg1.png" width="100%" height="auto" alt="">
+			
+			<marquee style="position: absolute; width: 100%; top: 136px; left: 0;" direction="left" behavior="scroll" color='#8ebf42'>若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee>
+
+			<div id="times" style="position: absolute; width: 100%; top: 136px; left: 0;"></div>
+			
+			<div id="xname" style="position: absolute; width: 100%; top: 156px; left: 0;"></div>
+		</div>
+    </body>
+</html>
