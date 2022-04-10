@@ -5,12 +5,15 @@
         <title>苏康码</title>
 
         <style type="text/css">
+			body{   
+				margin:0;    padding: 0;
+			}
             #times{
                 width: 400px;
                 height: 100px;
-				font-family: verdana;
+				font-family: "方正美黑_GBK";
 				font-weight: bold;
-                font-size: 100px;
+                font-size: 80px;
                 text-align: center;
                 line-height: 100px;
                 //border: 3px solid gray;  /*如果不加实线无法显示边框*/
@@ -59,17 +62,19 @@
             //使用定时器每秒向div写入当前时间
             setInterval("getDate()",1000);
         </script>
-		<div style="position: relative; width: 100%; height: auto;">
+		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
-			<img src="bg1.png" width="100%" height="auto" alt="">
+			<img src="bg111.png" width="100%" height="auto" alt="">
 			
 			<div id="xname" style="position: absolute; width: 100%; top: 100px; left: 0; color: white; font-size: 42px;">习包子</div>
 			
 			<div id="xid" style="position: absolute; width: 100%; top: 100px; left: 0; color: white; font-size: 42px; text-align: right;">110******011</div>
 			
-			<div style="position: absolute; width: 100%; top: 190px; left: 0; color:#FF6600; font-size: 42px;" ><marquee direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
+			<div style="position: absolute; width: 100%; top: 190px; color:#FF6600; font-size: 42px;" ><marquee style="position: absolute; width: 100%; left: 30px; right:30px;" scrollamount=50 direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
 
-			<div id="times" style="position: absolute; width: 100%; top: 340px; left: 0;"></div>
+			<div style="position: absolute; width: 30px; top: 190px; right:0; margin:0; background-color:#FFFBEF; font-size: 42px;" >&nbsp;</div>
+			
+			<div id="times" style="position: absolute; width: 100%; top: 305px; left: 0; color:#353D40;"></div>
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
