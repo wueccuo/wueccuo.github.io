@@ -18,6 +18,13 @@
                 line-height: 100px;
                 //border: 3px solid gray;  /*如果不加实线无法显示边框*/
             }
+			.image{
+			  position: relative;
+			}
+			.image a{
+			  display: block;      
+			  position: absolute;
+			}
         </style>
     </head>
     
@@ -64,7 +71,12 @@
         </script>
 		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
-			<img src="bg1.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id'))">
+			<div width="100%" class="image">
+			  <img src="bg1.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id'))">
+			  <a href="javascript:window.location.href=('index1-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id'));" style="top: 0; left:   0; width: 33%; height: 100%;"></a>
+			  <a href="javascript:window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id'));" style="top: 0; left: 33%; width: 33%; height: 100%;"></a>
+			  <a href="javascript:window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id'));" style="top: 0; left: 66%; width: 33%; height: 100%;"></a>
+			</div>
 			
 			<div id="xname" style="position: absolute; width: 100%; top: 120px; left: 0; color: white; font-size: 45px; font-family: '方正美黑';">习包子</div>
 			
