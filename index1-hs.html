@@ -7,6 +7,7 @@
         <style type="text/css">
 			body{   
 				margin:0;    padding: 0;
+				-webkit-tap-highlight-color: transparent;
 			}
             #times{
                 width: 400px;
@@ -65,11 +66,11 @@
 		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
 			<img src="bg-hs.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1.html?name='+getQueryString('name')+'&id='+getQueryString('id'))">
-			
+			<!--
 			<div id="xname" style="position: absolute; width: 100%; top: 120px; left: 0; color: white; font-size: 45px; font-family: '方正美黑';">习包子</div>
 			
 			<div id="xid" style="position: absolute; width: 100%; top: 130px; left: 0; color: white; font-size: 45px; text-align: right; font-family: '方正美黑';">110******011</div>
-			<!--
+			
 			<div style="position: absolute; width: 100%; top: 220px; color:#D36C2D; font-size: 45px;" ><marquee scrollamount=14 direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
 			
 			<div style="position: absolute; width: 30px; top: 190px; right:0; margin:0; background-color:#FFFBEF; font-size: 42px;" >&nbsp;</div>
@@ -79,10 +80,10 @@
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
-			div1.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getQueryString("name");
+			//div1.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getQueryString("name");
 			var div2 = document.getElementById("xid");
 			//div2.innerHTML = getQueryString("id")+"&nbsp;&nbsp;&nbsp;";
-			getDate();
+			//getDate();
         </script>
     </body>
 </html>
