@@ -13,9 +13,9 @@
                 width: 400px;
                 height: 100px;
 				font-family: "方正美黑";
-				font-weight: bold;
-                font-size: 96px;
-                text-align: center;
+				//font-weight: bold;
+                font-size: 30px;
+                text-align: left;
                 line-height: 100px;
                 //border: 3px solid gray;  /*如果不加实线无法显示边框*/
             }
@@ -52,16 +52,33 @@
             //得到时间并写入div
             function getDate(){
                 //获取当前时间
-                var date = new Date().format("MM-dd hh:mm:ss");
+                var date = new Date().format("yyyy-MM-dd");
                 //格式化为本地时间格式
                 var date1 = date.toLocaleString();
                 //获取div
-                var div1 = document.getElementById("xid");
+                var div1 = document.getElementById("times");
                 //将时间写入div
-                div1.innerHTML = date+"&nbsp;&nbsp;&nbsp;";
+				var mins = Math.floor(Math.random() * 40);
+                div1.innerHTML = date+"&nbsp;06:"+(mins>9?mins:("0"+mins));
             }
             //使用定时器每秒向div写入当前时间
             //setInterval("getDate()",1000);
+            function getItem(){
+                //获取当前时间
+                var date = new Date();
+				date = date.setDate(date.getDate() - 1);
+				var date1 = new Date(date).format("yyyy-MM-dd");
+				date = new Date();
+				date = date.setDate(date.getDate() - 2);
+				var date2 = new Date(date).format("yyyy-MM-dd");
+                //格式化为本地时间格式
+				var mins = Math.floor(Math.random() * 40);
+                //获取div
+                var div1 = document.getElementById("items");
+                //将时间写入div
+                div1.innerHTML  = "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:0  px;left: 0;'><div style='position: absolute;width: 100%;top: 150px;left: 180px;color:#353D40;font-size: 30px;'>"+date1+"&nbsp;06:"+(mins>9?mins:("0"+mins))+"</div>";
+				div1.innerHTML += "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:300px;left: 0;'><div style='position: absolute;width: 100%;top: 450px;left: 180px;color:#353D40;font-size: 30px;'>"+date2+"&nbsp;06:"+(mins>9?mins:("0"+mins))+"</div>";
+            }
         </script>
 		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
@@ -72,18 +89,18 @@
 			<div id="xid" style="position: absolute; width: 100%; top: 130px; left: 0; color: white; font-size: 45px; text-align: right; font-family: '方正美黑';">110******011</div>
 			
 			<div style="position: absolute; width: 100%; top: 220px; color:#D36C2D; font-size: 45px;" ><marquee scrollamount=14 direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
-			
-			<div style="position: absolute; width: 30px; top: 190px; right:0; margin:0; background-color:#FFFBEF; font-size: 42px;" >&nbsp;</div>
-			
-			<div id="times" style="position: absolute; width: 100%; top: 360px; left: 0; color:#353D40;"></div>
 			-->
+			<div id="times" style="position: absolute; width: 100%; top: 360px; left: 180px; color:red;"></div>
+			
+			<div id="items" style="position: absolute; width: 100%; top: 540px; height: auto; margin:0; padding:0;"></div>
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
 			//div1.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getQueryString("name");
 			var div2 = document.getElementById("xid");
 			//div2.innerHTML = getQueryString("id")+"&nbsp;&nbsp;&nbsp;";
-			//getDate();
+			getDate();
+			getItem();
         </script>
     </body>
 </html>
