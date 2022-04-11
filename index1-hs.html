@@ -72,12 +72,13 @@
 				date = date.setDate(date.getDate() - 2);
 				var date2 = new Date(date).format("yyyy-MM-dd");
                 //格式化为本地时间格式
-				var mins = Math.floor(Math.random() * 40);
+				var mins1 = Math.floor(Math.random() * 40);
+				var mins2 = Math.floor(Math.random() * 40);
                 //获取div
                 var div1 = document.getElementById("items");
                 //将时间写入div
-                div1.innerHTML  = "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:0  px;left: 0;'><div style='position: absolute;width: 100%;top: 150px;left: 180px;color:#353D40;font-size: 30px;'>"+date1+"&nbsp;06:"+(mins>9?mins:("0"+mins))+"</div>";
-				div1.innerHTML += "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:300px;left: 0;'><div style='position: absolute;width: 100%;top: 450px;left: 180px;color:#353D40;font-size: 30px;'>"+date2+"&nbsp;06:"+(mins>9?mins:("0"+mins))+"</div>";
+                div1.innerHTML  = "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:0  px;left: 0;'><div style='position: absolute;width: 100%;top: 150px;left: 180px;color:#353D40;font-size: 30px;'>"+date1+"&nbsp;06:"+(mins1>9?mins1:("0"+mins1))+"</div>";
+				div1.innerHTML += "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:300px;left: 0;'><div style='position: absolute;width: 100%;top: 450px;left: 180px;color:#353D40;font-size: 30px;'>"+date2+"&nbsp;06:"+(mins2>9?mins2:("0"+mins2))+"</div>";
             }
         </script>
 		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
