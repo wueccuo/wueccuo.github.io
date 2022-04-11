@@ -77,11 +77,11 @@
                 //获取div
                 var div1 = document.getElementById("items");
                 //将时间写入div
-                div1.innerHTML  = "<div style='position: absolute;width: 100%;top:0  px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 3)+".png'></div><div style='position: absolute;top: 188px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date1+"&nbsp;06:"+(mins1>9?mins1:("0"+mins1))+"</div>";
-				div1.innerHTML += "<div style='position: absolute;width: 100%;top:370px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 3)+".png'></div><div style='position: absolute;top: 558px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date2+"&nbsp;06:"+(mins2>9?mins2:("0"+mins2))+"</div>";
+                div1.innerHTML += "<div style='position: absolute;width: 100%;top: 672px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 3)+".png' /></div><div style='position: absolute;top: 861px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date1+"&nbsp;06:"+(mins1>9?mins1:("0"+mins1))+"</div>";
+				div1.innerHTML += "<div style='position: absolute;width: 100%;top:1044px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 3)+".png' /></div><div style='position: absolute;top: 1233px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date2+"&nbsp;06:"+(mins2>9?mins2:("0"+mins2))+"</div>";
             }
         </script>
-		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
+		<div id="items" style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
 			<img src="bg-hs.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1.html?name='+getQueryString('name')+'&id='+getQueryString('id'))" />
 			<!--
@@ -91,9 +91,9 @@
 			
 			<div style="position: absolute; width: 100%; top: 220px; color:#D36C2D; font-size: 45px;" ><marquee scrollamount=14 direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
 			-->
-			<div id="times" style="position: absolute; width: 100%; top: 462px; left: 225px;color:red;"></div>
-
-			<div id="items" style="position: absolute; width: 100%; top: 668px; left: 0; height: auto;"></div>
+			<div id="times" style="position: absolute; top: 462px; left: 225px;color:red;"></div>
+			<!--
+			<div id="items" style="position: absolute; width: 100%; top: 668px; left: 0; height: auto;"></div>-->
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
