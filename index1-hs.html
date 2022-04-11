@@ -14,7 +14,7 @@
                 height: 100px;
 				font-family: "方正美黑";
 				//font-weight: bold;
-                font-size: 30px;
+                font-size: 36px;
                 text-align: left;
                 line-height: 100px;
                 //border: 3px solid gray;  /*如果不加实线无法显示边框*/
@@ -77,8 +77,8 @@
                 //获取div
                 var div1 = document.getElementById("items");
                 //将时间写入div
-                div1.innerHTML  = "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:0  px;left: 0;'><div style='position: absolute;width: 100%;top: 150px;left: 180px;color:#353D40;font-size: 30px;'>"+date1+"&nbsp;06:"+(mins1>9?mins1:("0"+mins1))+"</div>";
-				div1.innerHTML += "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:300px;left: 0;'><div style='position: absolute;width: 100%;top: 450px;left: 180px;color:#353D40;font-size: 30px;'>"+date2+"&nbsp;06:"+(mins2>9?mins2:("0"+mins2))+"</div>";
+                div1.innerHTML  = "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:0  px;left: 0;'><div style='position: absolute;width: 100%;top: 188px;left: 225px;color:#353D40;font-size: 36px;'>"+date1+"&nbsp;06:"+(mins1>9?mins1:("0"+mins1))+"</div>";
+				div1.innerHTML += "<img src='bg-hs-"+Math.floor(Math.random() * 2)+".png' style='position: absolute;width: 100%;top:375px;left: 0;'><div style='position: absolute;width: 100%;top: 564px;left: 225px;color:#353D40;font-size: 36px;'>"+date2+"&nbsp;06:"+(mins2>9?mins2:("0"+mins2))+"</div>";
             }
         </script>
 		<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
@@ -91,9 +91,9 @@
 			
 			<div style="position: absolute; width: 100%; top: 220px; color:#D36C2D; font-size: 45px;" ><marquee scrollamount=14 direction="left" behavior="scroll">若您有近14天中高风险地区旅居史(含境外)请及时信息更新和风险报备。</marquee></div>
 			-->
-			<div id="times" style="position: absolute; width: 100%; top: 360px; left: 180px; color:red;"></div>
-			<!--
-			<div id="items" style="position: absolute; width: 100%; top: 540px; left: 0; height: auto; margin:0; padding:0;"></div>-->
+			<div id="times" style="position: absolute; width: 100%; top: 462px; left: 225px; color:red;"></div>
+			
+			<div id="items" style="position: absolute; width: 100%; top: 675px; left: 0; height: auto; margin:0; padding:0;"></div>
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
