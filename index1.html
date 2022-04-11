@@ -93,7 +93,8 @@
 			var div1 = document.getElementById("xname");
 			div1.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getQueryString("name");
 			var div2 = document.getElementById("xid");
-			div2.innerHTML = getQueryString("id")+"&nbsp;&nbsp;&nbsp;";
+			var id = getQueryString("id");
+			div2.innerHTML = id.substring(0,3)+"******"+id.substring(15)+"&nbsp;&nbsp;&nbsp;";
         </script>
     </body>
 </html>
