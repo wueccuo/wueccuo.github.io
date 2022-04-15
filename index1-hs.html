@@ -52,26 +52,26 @@
             //得到时间并写入div
             function getDate(){
                 //获取当前时间
-                var date = new Date().format("yyyy-MM-dd");
-                //格式化为本地时间格式
-                var date1 = date.toLocaleString();
+                var date = new Date();
+				date = date.setDate(date.getDate() - 1);
+				var date1 = new Date(date).format("yyyy-MM-dd");
                 //获取div
                 var div1 = document.getElementById("times");
                 //将时间写入div
 				var mins = Math.floor(Math.random() * 30);
 				var hs = getQueryString("hs");
 				if(hs==null) hs="08";
-                div1.innerHTML = date+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
+                div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
             }
             //使用定时器每秒向div写入当前时间
             //setInterval("getDate()",1000);
             function getItem(){
                 //获取当前时间
                 var date = new Date();
-				date = date.setDate(date.getDate() - 1);
+				date = date.setDate(date.getDate() - 2);
 				var date1 = new Date(date).format("yyyy-MM-dd");
 				date = new Date();
-				date = date.setDate(date.getDate() - 2);
+				date = date.setDate(date.getDate() - 3);
 				var date2 = new Date(date).format("yyyy-MM-dd");
                 //格式化为本地时间格式
 				var mins1 = Math.floor(Math.random() * 30);
