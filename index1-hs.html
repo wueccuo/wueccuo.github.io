@@ -71,10 +71,10 @@
                 //获取当前时间
                 var date = new Date();
 				date = date.setHours(date.getHours() - 23 - 24);
-				var date1 = new Date(date).format("yyyy-MM-dd hh:");
+				var date1 = new Date(date).format("yyyy-MM-dd");
 				date = new Date();
 				date = date.setHours(date.getHours() - 23 - 24 - 24);
-				var date2 = new Date(date).format("yyyy-MM-dd hh:");
+				var date2 = new Date(date).format("yyyy-MM-dd");
                 //格式化为本地时间格式
 				var mins1 = Math.floor(Math.random() * 60);
 				var mins2 = Math.floor(Math.random() * 60);
@@ -83,8 +83,8 @@
 				var hs = getQueryString("hs");
 				//if(hs==null) hs="08";
                 //将时间写入div
-                div1.innerHTML += "<div style='position: absolute;width: 100%;top: 670px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 1)+".png' /></div><div style='position: absolute;top:  864px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date1+(mins1>9?mins1:("0"+mins1))+"</div>";
-				div1.innerHTML += "<div style='position: absolute;width: 100%;top:1042px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 1)+".png' /></div><div style='position: absolute;top: 1236px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date2+(mins2>9?mins2:("0"+mins2))+"</div>";
+                div1.innerHTML += "<div style='position: absolute;width: 100%;top: 670px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 1)+".png' /></div><div style='position: absolute;top:  864px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date1+"&nbsp;"+hs+":"+(mins1>9?mins1:("0"+mins1))+"</div>";
+				div1.innerHTML += "<div style='position: absolute;width: 100%;top:1042px;left: 0;'><img width='100%' height='auto' src='bg-hs-"+Math.floor(Math.random() * 1)+".png' /></div><div style='position: absolute;top: 1236px;left: 225px;color:#353D40;font-size: 36px;font-family: 方正美黑;'>"+date2+"&nbsp;"+hs+":"+(mins2>9?mins2:("0"+mins2))+"</div>";
 				div1.innerHTML += "<div id='name0' style='position: absolute; top:  340px; left: 225px; color: #494949; font-size: 38px; font-family: 方正美黑;'></div>";
 				div1.innerHTML += "<div id='name1' style='position: absolute; top:  708px; left: 225px; color: #494949; font-size: 38px; font-family: 方正美黑;'></div>";
 				div1.innerHTML += "<div id='name2' style='position: absolute; top: 1081px; left: 225px; color: #494949; font-size: 38px; font-family: 方正美黑;'></div>";
