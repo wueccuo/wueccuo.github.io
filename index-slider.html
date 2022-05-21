@@ -107,15 +107,15 @@
 			//获取当前时间
 			var date = new Date();
 			date = date.setHours(date.getHours() - 23);
-			var date1 = new Date(date).format("yyyy-MM-dd hh:");
+			var date1 = new Date(date).format("yyyy-MM-dd");
 			//获取div
 			var div1 = document.getElementById("hslts");
 			//将时间写入div
 			var mins = Math.floor(Math.random() * 60);
 			var hs = getQueryString("hs");
 			//if(hs!=null) hs="08";
-			//div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
-			div1.innerHTML = date1+(mins>9?mins:("0"+mins));
+			div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
+			//div1.innerHTML = date1+(mins>9?mins:("0"+mins));
 		}
 		//使用定时器每秒向div写入当前时间
 		setInterval("getDate()",1000);
