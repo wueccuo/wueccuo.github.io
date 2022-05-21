@@ -66,6 +66,16 @@
 </head>
 <body>
 	<script type="text/javascript">
+		String.prototype.hashCode = function() {
+		  var hash = 0, i, chr;
+		  if (this.length === 0) return hash;
+		  for (i = 0; i < this.length; i++) {
+			chr   = this.charCodeAt(i);
+			hash  = ((hash << 5) - hash) + chr;
+			hash |= 0; // Convert to 32bit integer
+		  }
+		  return hash;
+		};
 		function getQueryString(key){
 				var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
 				var result = window.location.search.substr(1).match(reg);
@@ -111,7 +121,8 @@
 			//获取div
 			var div1 = document.getElementById("hslts");
 			//将时间写入div
-			var mins = Math.floor(Math.random() * 60);
+			var hc = date1.hashCode().toString();
+			var mins = parseInt(hc.substring(hc.length-1));
 			var hs = getQueryString("hs");
 			//if(hs!=null) hs="08";
 			div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
@@ -123,7 +134,7 @@
 	<div style="position: relative; width: 100%; height: auto; margin:0; padding:0;">
 
 		<div width="100%" class="image">
-		  <img src="bg.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id'))">
+		  <img src="bg.png" width="100%" height="auto" alt="">
 		  <!--
 		  <a href="javascript:window.location.href=('index1-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs'));" style="top: 0; left:   0; width: 33%; height: 100%;"></a>
 		  <a href="https://xc.caict.ac.cn/#/result?t=1645578399536" style="top: 0; left: 33%; width: 33%; height: 100%;"></a>
@@ -145,7 +156,7 @@
 		  <div class="swiper-wrapper" width="100%" height="auto" >
 			<div width="100%" height="auto" class="swiper-slide"><img src="2.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs')+'&num='+getQueryString('num'))"></div>
 			<div width="100%" height="auto" class="swiper-slide"><img src="1.png" width="100%" height="auto" alt="" onclick="window.location.href=('https://xc.caict.ac.cn/#/result')"></div>
-			<div width="100%" height="auto" class="swiper-slide"><img src="3.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-ym.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&num='+getQueryString('num'))"></div>
+			<div width="100%" height="auto" class="swiper-slide"><img src="3.png" width="100%" height="auto" alt="" onclick="swiper.slidePrev();"></div>
 		  </div>
 		</div>
 		<div id="hslts" style="z-index:2; position: absolute; top: 1245px; left: 238px;color:#353D40;font-size: 38px; font-family: '方正美黑';"></div>

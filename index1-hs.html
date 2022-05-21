@@ -24,6 +24,16 @@
     
     <body>
         <script type="text/javascript">
+			String.prototype.hashCode = function() {
+			  var hash = 0, i, chr;
+			  if (this.length === 0) return hash;
+			  for (i = 0; i < this.length; i++) {
+				chr   = this.charCodeAt(i);
+				hash  = ((hash << 5) - hash) + chr;
+				hash |= 0; // Convert to 32bit integer
+			  }
+			  return hash;
+			};
 			function getQueryString(key){
 					var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
 					var result = window.location.search.substr(1).match(reg);
@@ -58,7 +68,8 @@
                 //获取div
                 var div1 = document.getElementById("times");
                 //将时间写入div
-				var mins = Math.floor(Math.random() * 60);
+				var hc = date1.hashCode().toString();
+				var mins = parseInt(hc.substring(hc.length-1));
 				var hs = getQueryString("hs");
 				if(hs!=null) //hs="08";
 					div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
@@ -76,8 +87,10 @@
 				date = date.setHours(date.getHours() - 23 - 24 - 24);
 				var date2 = new Date(date).format("yyyy-MM-dd");
                 //格式化为本地时间格式
-				var mins1 = Math.floor(Math.random() * 60);
-				var mins2 = Math.floor(Math.random() * 60);
+				var hc = date1.hashCode().toString();
+				var mins1 = parseInt(hc.substring(hc.length-1));
+					hc = date2.hashCode().toString();
+				var mins2 = parseInt(hc.substring(hc.length-1));
                 //获取div
                 var div1 = document.getElementById("items");
 				var hs = getQueryString("hs");
