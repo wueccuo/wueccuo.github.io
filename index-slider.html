@@ -154,12 +154,11 @@
 		<!-- Swiper -->
 		<div class="swiper mySwiper" id="slides" style="z-index:1; position: absolute; width: 100%; top: 1140px; left: 0;">
 		  <div class="swiper-wrapper" width="100%" height="auto" >
-			<div width="100%" height="auto" class="swiper-slide"><img src="2.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs')+'&num='+getQueryString('num'))"></div>
+			<div width="100%" height="auto" class="swiper-slide"><img src="2.png" width="100%" height="auto" alt="" onclick="window.location.href=('index1-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs')+'&num='+getQueryString('num'))"><div id="hslts" style="z-index:2; position: absolute; top: 105px; left: 238px;color:#353D40;font-size: 38px; font-family: '方正美黑';"></div></div>
 			<div width="100%" height="auto" class="swiper-slide"><img src="1.png" width="100%" height="auto" alt="" onclick="window.location.href=('https://xc.caict.ac.cn/#/result')"></div>
 			<div width="100%" height="auto" class="swiper-slide"><img src="3.png" width="100%" height="auto" alt="" onclick="swiper.slidePrev();"></div>
 		  </div>
 		</div>
-		<div id="hslts" style="z-index:2; position: absolute; top: 1245px; left: 238px;color:#353D40;font-size: 38px; font-family: '方正美黑';"></div>
 	</div>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -172,11 +171,12 @@
 		swiper.on('slideChange', function () {
 		  if(swiper.activeIndex==0)
 			setTimeout(function() {
-			  getDateHs();
+			  //getDateHs();
 			}, 240);
-		  else
-			document.getElementById("hslts").innerHTML = "";
+		  //else
+			//document.getElementById("hslts").innerHTML = "";
 		});
+		getDateHs();
     </script>
 	<script type="text/javascript">
 		var div1 = document.getElementById("xname");
