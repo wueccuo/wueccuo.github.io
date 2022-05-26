@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-
 	<style type="text/css">
 		body{
 			margin:0;    padding: 0;
@@ -121,8 +120,7 @@
 			//获取div
 			var div1 = document.getElementById("hslts");
 			//将时间写入div
-			var hc = date1.hashCode().toString();
-			var mins = parseInt(hc.substring(hc.length-1));
+			var mins = parseInt(Date.parse(date1).toString().hashCode().toString().slice(-1));
 			var hs = getQueryString("hs");
 			//if(hs!=null) hs="08";
 			div1.innerHTML = date1+"&nbsp;"+hs+":"+(mins>9?mins:("0"+mins));
