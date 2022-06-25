@@ -94,8 +94,8 @@
         <script type="text/javascript">
 			
 			var div1 = document.getElementById("xname");
-			div1.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getQueryString("name");
-		
+			div1.innerHTML = ''+getQueryString("name");
+/*
 			var div2 = document.getElementById("xid");
 			var id = getQueryString("id");
 			div2.innerHTML = id.substring(0,3)+"******"+id.substring(15)+"&nbsp;&nbsp;&nbsp;";
