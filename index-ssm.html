@@ -76,7 +76,7 @@
 			  <a href="javascript:window.location.href=('index-ssm-hs.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs'));" style="top: 0; left:   0; width: 25%; height: 100%;"></a>
 			  <a href="#" style="top: 0; left: 25%; width: 25%; height: 100%;"></a>
 			  <a href="#" style="top: 0; left: 50%; width: 25%; height: 100%;"></a>
-			  <a href="javascript:window.location.href=('xc/index.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs')+'#183****3989&江苏省苏州市');" style="top: 0; left: 75%; width: 25%; height: 100%;"></a>
+			  <a href="javascript:window.location.href=('xc/index.html?name='+getQueryString('name')+'&id='+getQueryString('id')+'&hs='+getQueryString('hs')+'#183****3989&'+getQueryString('city'));" style="top: 0; left: 75%; width: 25%; height: 100%;"></a>
 			</div>
 			<!--
 			<div id="xname" style="position: absolute; width: 100%; top: 120px; left: 0; color: white; font-size: 45px; font-family: '方正美黑';">习包子</div>
@@ -89,11 +89,16 @@
 			-->
 			<div id="times" style="position: absolute; width: 100%; top: 585px; left: 0; color:black;display:inline;"></div>
 			
-			<div id="xname" style="position: absolute; width: 100%; top: 1345px; left: 0; color: #75574a; font-size: 48px;text-align: center; font-family: '方正美黑';">习包子</div>
+			<div id="xname" style="position: absolute; width: 100%; top: 1325px; left: 0; color: #75574a; font-size: 48px;text-align: center; font-family: '方正美黑';">习包子</div>
+			
+			<img id="blank" src="bg-ssm-sy1-blank.png" style="position: absolute; top: 1315px; left: 0;" width="100%" height="auto" alt="" onclick="">
 		</div>
         <script type="text/javascript">
 			var div1 = document.getElementById("xname");
-			div1.innerHTML = getQueryString("name");
+			var pname = getQueryString("name");
+			if(pname!=null)
+				document.getElementById("blank").style.display = "none";
+			div1.innerHTML = pname;
 			/*
 			var div2 = document.getElementById("xid");
 			var id = getQueryString("id");
