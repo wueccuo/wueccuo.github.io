@@ -61,6 +61,19 @@
         height: auto;
         object-fit: cover;
       }
+	#header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index:99;
+	}
+	#footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index:99;
+		background-color: white;
+	}
 	</style>
 </head>
 <body>
@@ -137,6 +150,8 @@
 			//if(hs!=null) hs="08";
 			div1.innerHTML = date1+"&nbsp;"+hs+":"+mins1+":"+secs1;
 			//div1.innerHTML = date1+(mins>9?mins:("0"+mins));
+			document.getElementById("cdate").innerHTML = new Date(date).format("MM月dd日");
+			document.getElementById("chour").innerHTML = 48;
 		}
 		//使用定时器每秒向div写入当前时间
 		setInterval("getDate()",1000);
@@ -172,6 +187,15 @@
 		  </div>
 		</div>
 	</div>
+	<div id="header" >
+		<img src="bg-header.png" width="100%" height="auto" alt="" style="">
+	</div>
+	<div id="footer" >
+		<img src="bg-footer.png" width="100%" height="auto" alt="" style="">
+		<div id="ctime" style="position: absolute; width: 100%; top: 187px; left: 180px; color:#919191; font-size: 29px;font-family: '方正美黑';">2022</div>
+		<div id="cdate" style="position: absolute; width: 100%; top: 331px; left: 132px; color:white; font-size: 57px;font-family: '方正美黑';font-weight: bold;">04</div>
+		<div id="chour" style="position: absolute; width: 100%; top: 318px; left: 610px; color:white; font-size: 98px;font-family: '方正美黑';font-weight: bold;">48</div>
+	</div>
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -197,6 +221,7 @@
 		div1.innerHTML = num.substring(0,3)+"****"+num.substring(7);
 		var div2 = document.getElementById("i01");
 		div2.innerHTML = "<img src='https://iili.io/"+getQueryString("i01")+".png' width='138' height='auto'>";
+		document.getElementById("ctime").innerHTML = new Date().format("yyyy-MM-dd hh:mm:ss");
 	</script>
 </body>
 </html>
